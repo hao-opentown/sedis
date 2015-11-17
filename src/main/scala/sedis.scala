@@ -100,7 +100,7 @@ class Pool(val underlying: JedisPool) {
     try {
       body(Dress.up(jedis))
     } finally {
-      underlying.returnResourceObject(jedis)
+      jedis.close()
     }
   }
   def withJedisClient[T](body: Jedis => T): T = {
@@ -108,7 +108,7 @@ class Pool(val underlying: JedisPool) {
     try {
       body(jedis)
     } finally {
-      underlying.returnResourceObject(jedis)
+      jedis.close()
     }
   }
 
@@ -121,7 +121,7 @@ class SentinelPool(val underlying: JedisSentinelPool) {
     try {
       body(Dress.up(jedis))
     } finally {
-      underlying.returnResourceObject(jedis)
+      jedis.close()
     }
   }
   def withJedisClient[T](body: Jedis => T): T = {
@@ -129,7 +129,7 @@ class SentinelPool(val underlying: JedisSentinelPool) {
     try {
       body(jedis)
     } finally {
-      underlying.returnResourceObject(jedis)
+      jedis.close()
     }
   }
 
