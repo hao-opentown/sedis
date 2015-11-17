@@ -9,7 +9,7 @@ Requirements
 ------------
 
 * Scala 2.11 or 2.10
-* Jedis 2.4.2
+* Jedis 2.7.2
 
 
 Getting Started
@@ -21,7 +21,7 @@ Getting Started
 <repositories>
     <repository>
         <id>org.sedis</id>
-        <url>http://pk11-scratch.googlecode.com/svn/trunk</url>
+        <url>http://opentown.cn/deps</url>
     </repository>
 </repositories>
 
@@ -29,7 +29,7 @@ Getting Started
     <dependency>
         <groupId>org.sedis</groupId>
         <artifactId>sedis_${scala.version}</artifactId>
-        <version>1.2.2</version>
+        <version>1.2.3</version>
     </dependency>
 </dependencies>
 ```
